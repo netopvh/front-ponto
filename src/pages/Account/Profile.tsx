@@ -1,5 +1,3 @@
-import { ApexOptions } from 'apexcharts'
-import ReactApexCharts from 'react-apexcharts'
 import { Link } from 'react-router-dom'
 
 import avatar1 from '@/assets/images/users/avatar-1.jpg'
@@ -9,31 +7,6 @@ import DonutChart from '@/components/Charts/DonutChart'
 import { useAuthStore } from '@/stores/auth.store'
 
 const ProfilePage = () => {
-  const apexOpts: ApexOptions = {
-    chart: {
-      height: 72,
-      width: 72,
-      type: 'donut'
-    },
-    legend: {
-      show: false
-    },
-    plotOptions: {
-      pie: {
-        donut: {
-          size: '80%'
-        }
-      }
-    },
-    stroke: {
-      colors: ['transparent']
-    },
-    dataLabels: {
-      enabled: false
-    },
-    colors: ['#47ad77', '#e3e9ee']
-  }
-
   const user = useAuthStore((state) => state.auth?.user)
 
   return (
@@ -81,7 +54,6 @@ const ProfilePage = () => {
                 </div>
               </div>
             </div>
-
             <ul className='social-list list-inline mt-6 '>
               <li className='me-2 inline-block'>
                 <Link to='' className='h-8 w-8 leading-7 block border-2 rounded-full border-primary text-primary'>

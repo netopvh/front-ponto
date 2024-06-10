@@ -11,10 +11,8 @@ import MaximizeScreen from '@/components/MaximizeScreen'
 import NotificationDropdown from '@/components/NotificationDropDown'
 import ProfileDropDown from '@/components/ProfileDropDown'
 import TopBarSearch from '@/components/TopBarSearch'
-import { paths } from '@/routes/paths'
 import { useAuthStore } from '@/stores/auth.store'
 import { useThemeStore } from '@/stores/theme/theme.store'
-import { useNavigate } from 'react-router-dom'
 
 export interface NotificationItem {
   id: number
@@ -76,7 +74,6 @@ function subtractHours(date: Date, minutes: number) {
 
 const Topbar = () => {
   const { width } = useViewPort()
-  const navigate = useNavigate()
 
   const { layoutTheme, sideBarType, changeSideBarType, changeLayoutTheme, showRightSideBar } = useThemeStore(
     (state) => state

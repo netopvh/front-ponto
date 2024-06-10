@@ -3,9 +3,7 @@ import { useThemeStore } from '@/stores/theme/theme.store'
 import { LegacyRef } from 'react'
 import SimpleBar from 'simplebar-react'
 import LayoutDirection from './LayoutDirection'
-import LayoutPosition from './LayoutPosition'
 import LayoutTheme from './LayoutTheme'
-import LayoutWidth from './LayoutWidth'
 import SideBarTheme from './SideBarTheme'
 import SideBarType from './SideBarType'
 import TopBarTheme from './TopBarTheme'
@@ -19,18 +17,18 @@ const ThemeCustomizer = ({ handleRightSideBar, rightBarNodeRef }: ThemeCustomize
   const {
     layoutTheme,
     layoutDirection,
-    layoutWidth,
+    // layoutWidth,
     topBarTheme,
     sideBarTheme,
     sideBarType,
-    layoutPosition,
+    // layoutPosition,
     changeLayoutTheme,
     changeLayoutDirection,
-    changeLayoutWidth,
+    // changeLayoutWidth,
     changeTopBarTheme,
     changeSideBarTheme,
-    changeSideBarType,
-    changeLayoutPosition
+    changeSideBarType
+    // changeLayoutPosition
   } = useThemeStore((state) => state)
 
   const handleChangeLayoutTheme = (value: string) => {
@@ -55,16 +53,16 @@ const ThemeCustomizer = ({ handleRightSideBar, rightBarNodeRef }: ThemeCustomize
     }
   }
 
-  const handleChangeLayoutWidth = (value: string) => {
-    switch (value) {
-      case 'boxed':
-        changeLayoutWidth(layoutConstants.LayoutWidth.LAYOUT_WIDTH_BOXED)
-        break
-      default:
-        changeLayoutWidth(layoutConstants.LayoutWidth.LAYOUT_WIDTH_FLUID)
-        break
-    }
-  }
+  // const handleChangeLayoutWidth = (value: string) => {
+  //   switch (value) {
+  //     case 'boxed':
+  //       changeLayoutWidth(layoutConstants.LayoutWidth.LAYOUT_WIDTH_BOXED)
+  //       break
+  //     default:
+  //       changeLayoutWidth(layoutConstants.LayoutWidth.LAYOUT_WIDTH_FLUID)
+  //       break
+  //   }
+  // }
 
   const handleChangeTopBarTheme = (value: string) => {
     switch (value) {
@@ -120,26 +118,16 @@ const ThemeCustomizer = ({ handleRightSideBar, rightBarNodeRef }: ThemeCustomize
     }
   }
 
-  const handleChangeLayoutPosition = (value: string) => {
-    switch (value) {
-      case 'scrollable':
-        changeLayoutPosition(layoutConstants.LayoutPosition.POSITION_SCROLLABLE)
-        break
-      default:
-        changeLayoutPosition(layoutConstants.LayoutPosition.POSITION_FIXED)
-        break
-    }
-  }
-
-  const reset = () => {
-    changeLayoutTheme(layoutConstants.LayoutTheme.THEME_LIGHT)
-    changeLayoutDirection(layoutConstants.LayoutDirection.LEFT_TO_RIGHT)
-    changeLayoutWidth(layoutConstants.LayoutWidth.LAYOUT_WIDTH_FLUID)
-    changeTopBarTheme(layoutConstants.TopBarTheme.TOPBAR_LIGHT)
-    changeSideBarTheme(layoutConstants.SideBarTheme.LEFT_SIDEBAR_THEME_LIGHT)
-    changeSideBarType(layoutConstants.SideBarType.LEFT_SIDEBAR_TYPE_DEFAULT)
-    changeLayoutPosition(layoutConstants.LayoutPosition.POSITION_FIXED)
-  }
+  // const handleChangeLayoutPosition = (value: string) => {
+  //   switch (value) {
+  //     case 'scrollable':
+  //       changeLayoutPosition(layoutConstants.LayoutPosition.POSITION_SCROLLABLE)
+  //       break
+  //     default:
+  //       changeLayoutPosition(layoutConstants.LayoutPosition.POSITION_FIXED)
+  //       break
+  //   }
+  // }
 
   return (
     <>
