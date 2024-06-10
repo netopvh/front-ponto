@@ -1,0 +1,16 @@
+import { StateCreator, create } from 'zustand'
+import { devtools } from 'zustand/middleware'
+import { immer } from 'zustand/middleware/immer'
+
+export const createStore = <T>(
+  storeName: string,
+  initializer: StateCreator<T, [['zustand/immer', never], ['zustand/devtools', never]], [['zustand/persist', T]]>
+) => {
+  return create<T>()(
+    immer(
+      devtools(initializer, {
+        name: storeName
+      })
+    )
+  )
+}
