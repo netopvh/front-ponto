@@ -106,7 +106,6 @@ const ProfilePage = () => {
             </ul>
           </div>
         </div>
-
         <div className='xl:col-span-6 lg:col-span-7'>
           <div className='card p-6'>
             <h3 className='text-lg'>Pontualidade</h3>
